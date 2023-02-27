@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- siswa.siswa tree view -->
+    <record id="siswa_siswa_view_tree" model="ir.ui.view">
+        <field name="name">siswa.siswa.view.tree</field>
+        <field name="model">siswa.siswa</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="nis"/>
+                <field name="jenis_kelamin"/>
+                <field name="tgl_lahir"/>
+                <field name="agama"/>
+                <field name="nm_ayah"/>
+                <field name="nm_ibu"/>
+                <field name="usia"/>
+                <field name="alamat"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- siswa.siswa form view -->
+    <record id="siswa_siswa_view_form" model="ir.ui.view">
+        <field name="name">siswa.siswa.view.form</field>
+        <field name="model">siswa.siswa</field>
+        <field name="arch" type="xml">
+            <form string="Kelompok Barang">
+                <sheet> 
+                    <group name="Kelompok" string="Product Name">
+                        <!-- Add your fields here -->
+                        <field name="nis"/>
+                        <field name="jenis_kelamin"/>
+                        <field name="tgl_lahir"/>
+                        <field name="agama"/>
+                        <field name="nm_ayah"/>
+                        <field name="nm_ibu"/>
+                        <field name="usia"/>
+                        <field name="alamat"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- siswa.siswa action window -->
+    <record id="siswa_siswa_action" model="ir.actions.act_window">
+        <field name="name">Siswa</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">siswa.siswa</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="siswa_menu_act" 
+            name="Siswa" 
+            parent="sekolah_menengah_menu_root" 
+            action="siswa_siswa_action" 
+            sequence="20"/>
+
+</odoo>
