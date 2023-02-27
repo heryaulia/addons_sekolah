@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- kelas.kelas tree view -->
+    <record id="kelas_kelas_view_tree" model="ir.ui.view">
+        <field name="name">kelas.kelas.view.tree</field>
+        <field name="model">kelas.kelas</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="nm_kelas_id"/>
+                <field name="nm_siswa"/>
+                <field name="wali_kelas_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- kelas.kelas form view -->
+    <record id="kelas_kelas_view_form" model="ir.ui.view">
+        <field name="name">kelas.kelas.view.form</field>
+        <field name="model">kelas.kelas</field>
+        <field name="arch" type="xml">
+            <form string="Kelompok Barang">
+                <sheet> 
+                    <group name="Kelompok" string="Product Name">
+                        <!-- Add your fields here -->
+                        <field name="nm_kelas_id"/>
+                        <field name="nm_siswa"/>
+                        <field name="wali_kelas_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- kelas.kelas action window -->
+    <record id="kelas_kelas_action" model="ir.actions.act_window">
+        <field name="name">Kelas</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">kelas.kelas</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="kelas_menu_act" 
+            name="Kelas" 
+            parent="sekolah_menengah_menu_root" 
+            action="kelas_kelas_action" 
+            sequence="10"/>
+
+</odoo>
